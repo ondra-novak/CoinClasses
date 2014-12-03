@@ -44,9 +44,7 @@
 						</toolChain>
 					</folderInfo>
 					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.1078937046.1661985838" name="CoinNodeData.cpp" rcbsApplicability="disable" resourcePath="src/CoinNodeData.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.2011566881.1927932797">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.2011566881.1927932797" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.2011566881">
-							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1539364297" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-						</tool>
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.2011566881.1927932797" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.2011566881"/>
 					</fileInfo>
 					<sourceEntries>
 						<entry excluding="src/CoinNodeSocketSync.cpp|src/CoinNodeSocket.cpp|src/CoinNodeListener.cpp|src/CoinNodeAbstractListener.cpp|tests|examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
@@ -98,9 +96,7 @@
 						</toolChain>
 					</folderInfo>
 					<fileInfo id="cdt.managedbuild.config.gnu.lib.release.1362656941.814212644" name="CoinNodeData.cpp" rcbsApplicability="disable" resourcePath="src/CoinNodeData.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1975017936.628443253">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1975017936.628443253" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1975017936">
-							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1248199806" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-						</tool>
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1975017936.628443253" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1975017936"/>
 					</fileInfo>
 					<sourceEntries>
 						<entry excluding="src/CoinNodeSocketSync.cpp|src/CoinNodeSocket.cpp|src/CoinNodeListener.cpp|src/CoinNodeAbstractListener.cpp|tests|examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
@@ -152,9 +148,7 @@
 						</toolChain>
 					</folderInfo>
 					<fileInfo id="cdt.managedbuild.config.gnu.lib.release.1362656941.1285728149.770278005" name="CoinNodeData.cpp" rcbsApplicability="disable" resourcePath="src/CoinNodeData.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1608236948.639968011">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1608236948.639968011" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1608236948">
-							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.428307444" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-						</tool>
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1608236948.639968011" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1608236948"/>
 					</fileInfo>
 					<sourceEntries>
 						<entry excluding="src/CoinNodeSocketSync.cpp|src/CoinNodeSocket.cpp|src/CoinNodeListener.cpp|src/CoinNodeAbstractListener.cpp|tests|examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>

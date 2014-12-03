@@ -100,6 +100,9 @@ public:
     // Return values: -1 = error, 0 = invalid signature, 1 = valid
     int verify(const uchar_vector& digest, const uchar_vector& signature);
     bool verifyCompact(const uchar_vector& digest, const uchar_vector& signature);
+
+    unsigned int getAddressVersion() const {return addressVersion;}
+    unsigned int getWalletImportVersion() const {return walletImportVersion;}
 };
 
 #endif

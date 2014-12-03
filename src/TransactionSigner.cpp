@@ -71,13 +71,7 @@ Transaction CreateTransaction(
     std::vector<uchar_vector> signatures;
     std::vector<uchar_vector> pubKeys;
     for (uint i = 0; i < claims.size(); i++) {
-        CoinKey key;
-        if (claims[i].walletImport != "") {
-            if (!key.setWalletImport(claims[i].walletImport))
-                throw std::runtime_error("Invalid wallet import key.");
-        }
-        else if (!key.setPrivateKey(claims[i].privKey))
-            throw std::runtime_error("Error setting private key.");
+        CoinKey key = claims[i].coinKey;
 
         uchar_vector fromPubKey = key.getPublicKey();
         uchar_vector fromPubKeyHash = ripemd160(sha256(fromPubKey));
@@ -129,13 +123,7 @@ void SignTransaction(const std::vector<BasicInput>& claims, Transaction& tx)
     std::vector<uchar_vector> signatures;
     std::vector<uchar_vector> pubKeys;
     for (uint i = 0; i < claims.size(); i++) {
-        CoinKey key;
-        if (claims[i].walletImport != "") {
-            if (!key.setWalletImport(claims[i].walletImport))
-                throw std::runtime_error("Invalid wallet import key.");
-        }
-        else if (!key.setPrivateKey(claims[i].privKey))
-            throw std::runtime_error("Error setting private key.");
+        CoinKey key = claims[i].coinKey;
 
         uchar_vector fromPubKey = key.getPublicKey();
         uchar_vector fromPubKeyHash = ripemd160(sha256(fromPubKey));

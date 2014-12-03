@@ -31,30 +31,17 @@
 class BasicInput
 {
 public:
-    string_secure walletImport; /// TODO: remove explicit walletImport and privKey...use coinKey instead.
-    uchar_vector_secure privKey;
     CoinKey coinKey;
     Coin::OutPoint outPoint;
     uint32_t sequence;
 
     BasicInput() { }
 
-    BasicInput(const string_secure& _walletImport, const Coin::OutPoint& _outPoint, uint32_t _sequence = 0xffffffff)
-        : walletImport(_walletImport), outPoint(_outPoint), sequence(_sequence) { }
-    BasicInput(const uchar_vector_secure& _privKey, const Coin::OutPoint& _outPoint, uint32_t _sequence = 0xffffffff)
-        : privKey(_privKey), outPoint(_outPoint), sequence(_sequence) { }
     BasicInput(const CoinKey& coinKey, const Coin::OutPoint& outPoint, uint32_t sequence = 0xffffffff)
-    {
-        this->coinKey = coinKey;
-        this->walletImport = coinKey.getWalletImport();
-        this->privKey = coinKey.getPrivateKey();
-        this->outPoint = outPoint;
-        this->sequence = sequence;
-    }
+    :coinKey(coinKey),outPoint(outPoint),sequence(sequence) {}
     BasicInput(const BasicInput& basicInput)
     {
-        this->walletImport = basicInput.walletImport;
-        this->privKey = basicInput.privKey;
+    	this->coinKey = basicInput.coinKey;
         this->outPoint = basicInput.outPoint;
         this->sequence = basicInput.sequence;
     }

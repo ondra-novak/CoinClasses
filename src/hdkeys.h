@@ -61,12 +61,15 @@ public:
     HDKeychain() { }
     HDKeychain(const bytes_t& key, const bytes_t& chain_code, uint32_t child_num = 0, uint32_t parent_fp = 0, uint32_t depth = 0);
     HDKeychain(const bytes_t& extkey);
+#if __cplusplus >= 201103L
     HDKeychain(HDKeychain&& source);
+#endif
 
     HDKeychain& operator=(const HDKeychain& rhs);    
 
+#if __cplusplus >= 201103L
     explicit operator bool() const { return valid_; }
-
+#endif
 
     bool operator==(const HDKeychain& rhs) const;
     bool operator!=(const HDKeychain& rhs) const;
@@ -94,6 +97,8 @@ public:
     static void setVersions(uint32_t priv_version, uint32_t pub_version) { priv_version_ = priv_version; pub_version_ = pub_version; }
 
     std::string toString() const;
+
+    bool isValid() const {return valid_;}
 
 private:
     static uint32_t priv_version_;

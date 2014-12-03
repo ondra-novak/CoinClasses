@@ -346,7 +346,16 @@ bool CoinKey::signCompact(const uchar_vector& digest, uchar_vector& signature)
 bool CoinKey::setCompactSignature(const uchar_vector& digest, const uchar_vector& signature)
 {
     if (signature.size() != 65) return false;
-    if (signature[0] < 27 || signature[0] >= 31) return false;
+
+    unsigned char first = signature[0];
+    bool compressed;
+    if (first >=31) {
+    	compressed = true;
+    	first-=4;
+    } else {
+    	compressed = false;
+    }
+    if (first < 27 || first >= 31) return false;
 
     ECDSA_SIG *pSig = ECDSA_SIG_new();
     BN_bin2bn(&signature[1], 32, pSig->r);
@@ -354,9 +363,10 @@ bool CoinKey::setCompactSignature(const uchar_vector& digest, const uchar_vector
 
     EC_KEY_free(this->pKey);
     this->pKey = EC_KEY_new_by_curve_name(EC_CURVE_NAME);
-    if (ECDSA_SIG_recover_key_GFp(this->pKey, pSig, (unsigned char*)&digest[0], digest.size(), signature[0] - 27, 0) == 1) {
+    if (ECDSA_SIG_recover_key_GFp(this->pKey, pSig, (unsigned char*)&digest[0], digest.size(), first - 27, 0) == 1) {
         this->bSet = true;
         ECDSA_SIG_free(pSig);
+        bCompressed = compressed;
         return true;
     }
     return false;
